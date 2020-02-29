@@ -4,3 +4,4 @@ I have provided a simple, generic brick breaker game, built in Godot. You can us
 
 - Changed the color of the paddle, ball and tiles
 - Animated how tiles and paddle come on screen
+- Squeeze and stretch paddle
