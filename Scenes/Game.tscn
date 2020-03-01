@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Paddle.gd" type="Script" id=2]
@@ -6,16 +6,407 @@
 [ext_resource path="res://Scripts/Score.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/Lives.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Starting.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/Tile Row 1.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/Camera.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Boing.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Blip_Select3.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Hit_Hurt.wav" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Blazer Rail.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/medium_star clone.png" type="Texture" id=13]
+[ext_resource path="res://Assets/eye.png" type="Texture" id=14]
+[ext_resource path="res://Assets/mouth.png" type="Texture" id=15]
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 64, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 64, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=18]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 64, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 64, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 64, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=38]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=39]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=41]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=42]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 64, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=43]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=44]
+animations = [ {
+"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=45]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=46]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=47]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=48]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=49]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=50]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=51]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=52]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=53]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=54]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=55]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 64, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=56]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=57]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=58]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 64, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=59]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=60]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=61]
+animations = [ {
+"frames": [ SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 72, 16 )
 
+[sub_resource type="ParticlesMaterial" id=2]
+lifetime_randomness = 0.43
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+spread = 180.0
+gravity = Vector3( 0, 50, 0 )
+initial_velocity = 100.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 3.0
+linear_accel_random = 0.5
+scale = 3.0
+
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+margin_left = -27.2075
+margin_top = -127.446
+margin_right = 1095.79
+margin_bottom = 995.554
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Star_1-1" type="AnimatedSprite" parent="Background"]
+position = Vector2( 943.67, 121.718 )
+frames = SubResource( 18 )
+frame = 11
+playing = true
+
+[node name="Star_1-3" type="AnimatedSprite" parent="Background"]
+position = Vector2( 126.014, 282.099 )
+scale = Vector2( 0.75, 0.75 )
+frames = SubResource( 18 )
+frame = 11
+playing = true
+
+[node name="Star_1-2" type="AnimatedSprite" parent="Background"]
+position = Vector2( 280.667, 498.327 )
+frames = SubResource( 18 )
+frame = 11
+playing = true
+
+[node name="Star_2-1" type="AnimatedSprite" parent="Background"]
+position = Vector2( 51.551, 127.446 )
+frames = SubResource( 44 )
+frame = 20
+playing = true
+
+[node name="Star_2-2" type="AnimatedSprite" parent="Background"]
+position = Vector2( 611.452, 48.6871 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 44 )
+frame = 20
+playing = true
+
+[node name="Star_2-3" type="AnimatedSprite" parent="Background"]
+position = Vector2( 893.551, 376.609 )
+frames = SubResource( 44 )
+frame = 19
+playing = true
+
+[node name="Star_3-1" type="AnimatedSprite" parent="Background"]
+position = Vector2( 724.578, 249.163 )
+scale = Vector2( 0.75, 0.75 )
+frames = SubResource( 61 )
+frame = 11
+playing = true
+
+[node name="Star_3-2" type="AnimatedSprite" parent="Background"]
+position = Vector2( 223.388, 164.677 )
+scale = Vector2( 0.75, 0.75 )
+frames = SubResource( 61 )
+frame = 11
+playing = true
 
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0
 current = true
+script = ExtResource( 8 )
 
 [node name="Paddle" type="KinematicBody2D" parent="."]
 position = Vector2( 544, 552 )
@@ -37,6 +428,36 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle"]
 shape = SubResource( 1 )
 
+[node name="Tween" type="Tween" parent="Paddle"]
+
+[node name="Particles" type="Particles2D" parent="Paddle"]
+emitting = false
+lifetime = 2.0
+one_shot = true
+speed_scale = 3.0
+explosiveness = 0.7
+randomness = 0.5
+process_material = SubResource( 2 )
+
+[node name="Eye" type="Sprite" parent="Paddle"]
+position = Vector2( -30.5098, -7.06128 )
+scale = Vector2( 0.331507, 0.331507 )
+texture = ExtResource( 14 )
+
+[node name="Eye2" type="Sprite" parent="Paddle"]
+position = Vector2( 28.9114, -7.06128 )
+scale = Vector2( 0.331507, 0.331507 )
+texture = ExtResource( 14 )
+
+[node name="Mouth" type="Sprite" parent="Paddle"]
+position = Vector2( -0.590546, 3.1347 )
+rotation = -0.127409
+scale = Vector2( 0.565162, 0.565162 )
+texture = ExtResource( 15 )
+__meta__ = {
+"_editor_description_": "                                       "
+}
+
 [node name="Wall" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
@@ -44,7 +465,10 @@ polygon = PoolVector2Array( 0, 632, 0, 0, 1024, 0, 1024, 632, 1064, 632, 1064, -
 
 [node name="Tiles" type="Node2D" parent="."]
 
-[node name="Tile Row 1" type="Node2D" parent="Tiles"]
+[node name="Tile Row 1" type="Node2D" parent="Tiles" groups=[
+"Tile Row",
+]]
+script = ExtResource( 7 )
 
 [node name="Tile" parent="Tiles/Tile Row 1" instance=ExtResource( 3 )]
 position = Vector2( 184, 296 )
@@ -76,7 +500,10 @@ position = Vector2( 760, 296 )
 [node name="Tile10" parent="Tiles/Tile Row 1" instance=ExtResource( 3 )]
 position = Vector2( 832, 296 )
 
-[node name="Tile Row 2" type="Node2D" parent="Tiles"]
+[node name="Tile Row 2" type="Node2D" parent="Tiles" groups=[
+"Tile Row",
+]]
+script = ExtResource( 7 )
 
 [node name="Tile" parent="Tiles/Tile Row 2" instance=ExtResource( 3 )]
 position = Vector2( 184, 256 )
@@ -108,7 +535,10 @@ position = Vector2( 760, 256 )
 [node name="Tile10" parent="Tiles/Tile Row 2" instance=ExtResource( 3 )]
 position = Vector2( 832, 256 )
 
-[node name="Tile Row 3" type="Node2D" parent="Tiles"]
+[node name="Tile Row 3" type="Node2D" parent="Tiles" groups=[
+"Tile Row",
+]]
+script = ExtResource( 7 )
 
 [node name="Tile" parent="Tiles/Tile Row 3" instance=ExtResource( 3 )]
 position = Vector2( 184, 216 )
@@ -140,7 +570,10 @@ position = Vector2( 760, 216 )
 [node name="Tile10" parent="Tiles/Tile Row 3" instance=ExtResource( 3 )]
 position = Vector2( 832, 216 )
 
-[node name="Tile Row 4" type="Node2D" parent="Tiles"]
+[node name="Tile Row 4" type="Node2D" parent="Tiles" groups=[
+"Tile Row",
+]]
+script = ExtResource( 7 )
 
 [node name="Tile" parent="Tiles/Tile Row 4" instance=ExtResource( 3 )]
 position = Vector2( 184, 176 )
@@ -172,7 +605,10 @@ position = Vector2( 760, 176 )
 [node name="Tile10" parent="Tiles/Tile Row 4" instance=ExtResource( 3 )]
 position = Vector2( 832, 176 )
 
-[node name="Tile Row 5" type="Node2D" parent="Tiles"]
+[node name="Tile Row 5" type="Node2D" parent="Tiles" groups=[
+"Tile Row",
+]]
+script = ExtResource( 7 )
 
 [node name="Tile" parent="Tiles/Tile Row 5" instance=ExtResource( 3 )]
 position = Vector2( 184, 136 )
@@ -229,4 +665,19 @@ script = ExtResource( 6 )
 
 [node name="Timer" type="Timer" parent="Starting"]
 wait_time = 10.0
+
+[node name="Comet" type="Node2D" parent="."]
+
+[node name="Blip" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="Boing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="Wall_Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+autoplay = true
 [connection signal="timeout" from="Starting/Timer" to="Starting" method="_on_Timer_timeout"]
