@@ -11,3 +11,4 @@ I have provided a simple, generic brick breaker game, built in Godot. You can us
 - Rotated blocks after they are hit
 - Added particles when tiles are destroyed
 - Added comet trail to the ball
+- Added particles to paddle when ball collides with it
