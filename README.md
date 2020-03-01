@@ -14,6 +14,7 @@ I have provided a simple, generic brick breaker game, built in Godot. You can us
 - Added particles to paddle when ball collides with it
 - Added screen shake when ball hits tiles
 - Added screen shake when ball hits camera
-- Added sound effects
+- Created sound effects
 - Added music
 - Created animated background
+- Created face on paddle
