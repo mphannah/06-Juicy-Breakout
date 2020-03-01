@@ -15,3 +15,4 @@ I have provided a simple, generic brick breaker game, built in Godot. You can us
 - Added screen shake when ball hits tiles
 - Added screen shake when ball hits camera
 - Added sound effects
+- Added music
